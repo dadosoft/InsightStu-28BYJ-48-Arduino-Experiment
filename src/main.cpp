@@ -34,7 +34,3 @@ void loop() {
     myStepper.step(-stepsPerRev / 100);
     }
 }
-
-void toggle(){
-  
-}
