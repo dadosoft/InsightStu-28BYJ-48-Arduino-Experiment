@@ -2,9 +2,10 @@
 
 #include <Arduino.h> /* Include Arduino GLibs */
 #include <Stepper.h> /* Include Stepper config */
+#include <IRRemote.h> /* Include IT libs */
 
-const int reverser = 3;
-const int onOffSwitch = 2;
+const int reverser = 3;   	/* Reverse button Pin */
+const int onOffSwitch = 2;  /* Toggle Switch Pin */
 const int shaftRevs = 32;
 const int gearRed = 64;
 const int stepsPerRev = 200; /* (shaftRevs * gearRed) is currently broken... */
