@@ -22,6 +22,7 @@ Stepper myStepper(stepsPerRev, 8, 10, 9, 11); /* Pin 9 and 10 are reversed to ma
 
 
 void setup() {
+  Serial.begin(9600);
   pinMode(reverser, INPUT);
   pinMode(onOffSwitch, INPUT);
 }
@@ -32,14 +33,13 @@ void loop() {
   int reverse;
 
   bCurr = digitalRead(reverser);
-  if (bCurr == HIGH && bPrev == LOW && millis() - time > debounce){
+  if (bCurr == HIGH && bPrev == LOW){
     if (bState == HIGH){
       reverse = LOW;
     }
     else{
       reverse = HIGH;
     }
-    time = millis();
   } 
   
   if (motorSpeed > 0 && reverse == LOW) {
